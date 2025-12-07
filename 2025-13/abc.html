@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复古唱片墙</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', serif;
+            background-color: #f5f1e9;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            background-image: url('data:image/png;base64,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');
+        }
+        
+        /* 容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* 唱片墙网格 - 无边框无缝隙 */
+        .record-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+        }
+        
+        /* 唱片项目 */
+        .record-item {
+            position: relative;
+            transition: all 0.3s ease;
+            perspective: 1000px;
+        }
+        
+        .record-item:hover {
+            transform: translateY(-5px);
+            z-index: 10;
+        }
+        
+        .record-item:hover .record-cover::after {
+            opacity: 0.8;
+        }
+        
+        .record-cover {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* 1:1 正方形比例 */
+            overflow: hidden;
+            background-color: #e0e0e0;
+            border: none;
+            box-shadow: none;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+            backface-visibility: hidden;
+        }
+        
+        .record-item:hover .record-cover {
+            transform: rotateY(5deg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .record-cover img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+            filter: saturate(0.9) sepia(0.1); /* 复古色调 */
+        }
+        
+        .record-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+            opacity: 0.2;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        /* 简化样式，移除文字信息 */
+        
+        /* 移除标签效果 */
+        
+        /* 响应式设计 - 保持无边框无缝隙 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0;
+            }
+            
+            .record-wall {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 0;
+                padding: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .record-wall {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 0;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="record-wall" id="recordWall">
+            <!-- 唱片项目将由JavaScript动态生成 -->
+        </div>
+    </div>
+    
+    <script>
+        // 模拟唱片数据 - 随机顺序
+        const recordData = [
+            { title: "电子实验", artist: "实验音乐人", year: "1972", imageId: 1 },
+            { title: "爵士即兴", artist: "爵士音乐家", year: "1966", imageId: 2 },
+            { title: "秋日私语", artist: "小提琴家", year: "1974", imageId: 3 },
+            { title: "流行金曲", artist: "流行歌手", year: "1980", imageId: 4 },
+            { title: "电影原声", artist: "配乐大师", year: "1966", imageId: 5 },
+            { title: "雨中旋律", artist: "轻音乐队", year: "1969", imageId: 7 },
+            { title: "老街", artist: "城市民谣", year: "1970", imageId: 9 },
+            { title: "乡村音乐", artist: "乡村乐团", year: "1976", imageId: 11 },
+            { title: "草原情歌", artist: "民族歌手", year: "1976", imageId: 15, tag: "稀有" },
+            { title: "街角咖啡馆", artist: "爵士三重奏", year: "1973", imageId: 16 },
+            { title: "午夜蓝调", artist: "爵士乐手", year: "1965", imageId: 21 },
+            { title: "电子时代", artist: "电子乐队", year: "1983", imageId: 27 },
+            { title: "爵士蓝调", artist: "爵士蓝调乐队", year: "1969", imageId: 46, tag: "稀有" },
+            { title: "电子实验", artist: "实验音乐人", year: "1972", imageId: 1 },
+            { title: "爵士即兴", artist: "爵士音乐家", year: "1966", imageId: 2 },
+            { title: "秋日私语", artist: "小提琴家", year: "1974", imageId: 3 },
+            { title: "流行金曲", artist: "流行歌手", year: "1980", imageId: 4 },
+            { title: "电影原声", artist: "配乐大师", year: "1966", imageId: 5 },
+            { title: "雨中旋律", artist: "轻音乐队", year: "1969", imageId: 7 },
+            { title: "老街", artist: "城市民谣", year: "1970", imageId: 9 },
+            { title: "乡村音乐", artist: "乡村乐团", year: "1976", imageId: 11 },
+            { title: "草原情歌", artist: "民族歌手", year: "1976", imageId: 15, tag: "稀有" },
+            { title: "街角咖啡馆", artist: "爵士三重奏", year: "1973", imageId: 16 },
+            { title: "午夜蓝调", artist: "爵士乐手", year: "1965", imageId: 21 },
+            { title: "电子时代", artist: "电子乐队", year: "1983", imageId: 27 },
+            { title: "爵士蓝调", artist: "爵士蓝调乐队", year: "1969", imageId: 46, tag: "稀有" },
+        ];
+        
+        // 获取唱片墙容器
+        const recordWall = document.getElementById('recordWall');
+        
+        // 生成随机复古色调
+        function getVintageColor() {
+            const colors = [
+                '#8d6e63', '#a1887f', '#d7ccc8', '#bcaaa4', 
+                '#795548', '#5d4037', '#6d4c41', '#827717'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        // 创建唱片项目
+        recordData.forEach(record => {
+            // 创建唱片容器
+            const recordItem = document.createElement('div');
+            recordItem.className = 'record-item';
+            
+            // 创建封面容器
+            const coverContainer = document.createElement('div');
+            coverContainer.className = 'record-cover';
+            
+            // 创建图片元素（使用正方形占位图模拟唱片封面）
+            const img = document.createElement('img');
+            const bgColor = getVintageColor();
+            // 使用纯颜色正方形占位图
+            img.src = `./pics/${record.imageId}.jpg`;
+            img.alt = `Album cover ${record.imageId}`;
+            img.loading = 'lazy'; // 懒加载
+            
+            // 添加图片加载错误处理
+            img.onerror = function() {
+                this.src = `./pics/${record.imageId}.jpg`;
+            };
+            
+            // 添加到封面容器
+            coverContainer.appendChild(img);
+            
+            // 移除标签（专辑封面不需要标签）
+            
+            // 添加到唱片项目（仅包含封面，不包含文字信息）
+            recordItem.appendChild(coverContainer);
+            
+            // 添加到唱片墙
+            recordWall.appendChild(recordItem);
+        });
+        
+        // 添加平滑滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 窗口加载完成后的淡入效果
+        window.addEventListener('load', function() {
+            const recordItems = document.querySelectorAll('.record-item');
+            recordItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
